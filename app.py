@@ -4,10 +4,10 @@ from markupsafe import escape
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def hello():
-    name = request.args.get("name", "")
-    message = request.args.get("message", "")
+    name = request.args.get("name")
+    message = request.args.get("message")
     return f"Hello {escape(name)}! {escape(message)}"
 
 if __name__ == "__main__":
